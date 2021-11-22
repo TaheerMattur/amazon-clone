@@ -9,7 +9,8 @@ const stripe = require("stripe")("sk_test_51JtViRSDPfCPNYxeGmXzVkDc2tzWJeZJKg26Y
 const app = express();
 
 //Middlewares
-app.use(cors({origin: true}));
+app.use(cors());
+app.options('*', cors());
 app.use(express.json());
 
 //-API routes
@@ -18,7 +19,7 @@ app.post("/payments/create", async (req, res) => {
     const total = req.query.total;
     const paymentIntent = await stripe.paymentIntents.create({
         amount: total, 
-        currency: 'usd',
+        currency: 'INR',
     });
 
     //OK - Created

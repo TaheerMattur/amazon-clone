@@ -21,18 +21,20 @@ const Payment = () => {
   const [processing, setProcessing] = useState("");
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
-  const [clientSecret, setClientSecret] = useState("");
+  const [clientSecret, setClientSecret] = useState();
 
   useEffect(() => {
     const getClientSecret = async () => {
       try {
         const response = await axios({
-          method: "POST",
+          method: "post",
+          // Stripe expects the total in a currencies subunits
           url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
         });
         setClientSecret(response.data.clientSecret);
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        console.log("Payment error: ", error);
+        setError(error);
       }
     };
     getClientSecret();
@@ -41,14 +43,17 @@ const Payment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
+    console.log("clientSecret", clientSecret);
+    console.log("CardElement", elements.getElement(CardElement));
 
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
-          card: elements.getElement(CardElement),
+          card: elements.getElement('card'),
         },
       })
       .then(({ paymentIntent }) => {
+        // console.log("paymentIntent" , paymentIntent);
         db.collection("users")
           .doc(user && user.uid)
           .collection("orders")
@@ -61,10 +66,13 @@ const Payment = () => {
         setSucceded(true);
         setError(null);
         setProcessing(false);
-        dispatch({
-          type: "EMPTY_BASKET",
-        });
+        // dispatch({
+        //   type: "EMPTY_BASKET",
+        // });
         history.push("/orders");
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -84,7 +92,7 @@ const Payment = () => {
           <div className="payment-adress">
             <p>{user && user.email}</p>
             <p>House No. #2221 Near Banakar Petroleum, Hirekerur</p>
-            <p>Tqw Hirekerur, Dist Haveri</p>
+            <p>Tq Hirekerur, Dist Haveri</p>
             <p>Karnataka, India</p>
           </div>
         </div>
