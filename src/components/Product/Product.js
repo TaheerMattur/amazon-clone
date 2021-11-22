@@ -38,8 +38,8 @@ const Product = ({
           <p>{title}</p>
         </Link>
         <p className="price">
-          <strong>$</strong>
           <strong>{price}</strong>
+          <strong>Rs</strong>
         </p>
         <div className="rating">
           {Array(rating)

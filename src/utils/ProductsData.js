@@ -3,7 +3,7 @@ const products = [
      
       id: "1",
       title: "Diverse Men's Regular Formal Shirt",
-      price: 16,
+      price: 650,
       rating: 5,
       specification: [
         "Care Instructions: Machine Wash",
@@ -24,7 +24,7 @@ const products = [
      
       id: "2",
       title: "REDMI Note 10 (Aqua Green, 64 GB)  (4 GB RAM)",
-      price: 11,
+      price: 15000,
       rating: 3,
       specification: [
         "Display: FHD+ (1080x2400) AMOLED Dot display; 16.33 centimeters (6.43 inch); 20:9 aspect ratio",
@@ -42,7 +42,7 @@ const products = [
      
       id: "3",
       title: "Lenovo Tab M10 HD 2nd Gen (10.1 inch, 4 GB, 64 GB, Wi-Fi+LTE)",
-      price: 11,
+      price: 10000,
       rating: 4,
       specification: [
         "4 GB RAM | 64 GB ROM | Expandable Upto 256 GB",
@@ -61,7 +61,7 @@ const products = [
       id: "4",
       title:
         "HP Pavilion Gaming 10th Gen Intel Core i5 Processor 16.1 (40.9 cms) FHD Gaming Laptop",
-      price: 11,
+      price: 70000,
       rating: 4,
       specification: [
         "2.5GHz Intel i5-10300H 10th Gen processor",
@@ -80,7 +80,7 @@ const products = [
      
       id: "5",
       title: "crocs Unisex-Adult Bayaband Clog",
-      price: 23,
+      price: 1500,
       rating: 4,
       specification: [
         "Closure: Pull-On",
@@ -101,7 +101,7 @@ const products = [
       id: "6",
       title:
         "LG 27 inch 4K-UHD (3840 x 2160) HDR 10 Monitor (Gaming & Design) with IPS Panel",
-      price: 11,
+      price: 15000,
       rating: 5,
       specification: [
         "27 inch 4K UHD (3840 x 2160) Resoltion with HDR 10",

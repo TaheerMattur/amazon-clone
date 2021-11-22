@@ -1,6 +1,5 @@
 import * as types from './actionTypes';
 
-
 const initialState = {
     loading: false,
     basket: [],

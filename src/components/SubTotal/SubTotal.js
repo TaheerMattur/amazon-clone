@@ -35,7 +35,7 @@ const handleCheckout =() =>{
             value={getBasketTotal(basket)}
             displayType= {"text"}
             thousandSeprator = {true}
-            perfix ={"$"}
+            perfix ={"₹"}
             />
             <button onClick={handleCheckout}>Proceed to Checkout</button>
         </div>
