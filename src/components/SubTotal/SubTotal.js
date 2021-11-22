@@ -23,7 +23,7 @@ const handleCheckout =() =>{
             renderText ={(value) =>(
                 <>
                 <p>
-                    SubTotal ({basket.length} items) : <strong>{value}</strong>
+                    SubTotal ({basket.length} items) : <strong><sup>₹</sup>{value}</strong>
                 </p>
                 <small className="subtotal-gift">
                     <input type="checkbox"/>

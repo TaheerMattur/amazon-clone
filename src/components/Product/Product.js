@@ -14,7 +14,6 @@ const Product = ({
   specification,
   detail,
 }) => {
-    
   const dispatch = useDispatch();
 
   const onAddItemToBasket = () => {
@@ -38,8 +37,13 @@ const Product = ({
           <p>{title}</p>
         </Link>
         <p className="price">
-          <strong>{price}</strong>
-          <strong>Rs</strong>
+          <strong>
+            <sup>₹</sup>
+          </strong>
+          <strong>
+            {price}
+            <sup>00</sup>
+          </strong>
         </p>
         <div className="rating">
           {Array(rating)
