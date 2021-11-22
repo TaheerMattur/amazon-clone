@@ -25,11 +25,9 @@ const SingleProduct = () => {
                 image : singleProduct.image,
                 specification : singleProduct.specification,
                 detail : singleProduct.detail
-
            }
-           console.log("nihal")
-           console.log(item);
-           console.log(singleProduct);
+        //    console.log(item);
+        //    console.log(singleProduct);
            dispatch(addToBasket(item));
     }
 
@@ -47,7 +45,7 @@ const SingleProduct = () => {
                             {Array(singleProduct.rating).fill().map((_, index) => <p key={index}>⭐</p>)}
                         </div>
                         <p className="single-product-price">
-                            Price : <strong>$</strong>
+                            Price : <strong>₹</strong>
                             <strong>{singleProduct.price}</strong>
                         </p>
                         <div className="single-product-specification">
